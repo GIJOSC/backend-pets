@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gijosc.adoteumpet.api.pet.dtos.PetResponse;
 import com.gijosc.adoteumpet.api.pet.mappers.PetMapper;
 import com.gijosc.adoteumpet.core.models.Pet;
-import com.gijosc.adoteumpet.core.repositories.PetRepositories;
+import com.gijosc.adoteumpet.core.repositories.PetRepository;
 
 @RestController
 public class PetController {
 
   @Autowired  
-  private PetRepositories petRepository;
+  private PetRepository petRepository;
 
   @Autowired
   private PetMapper petMapper;

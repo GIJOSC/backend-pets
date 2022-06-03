@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gijosc.adoteumpet.api.adocao.dtos.AdocaoRequest;
 import com.gijosc.adoteumpet.api.adocao.dtos.AdocaoResponse;
 import com.gijosc.adoteumpet.api.adocao.mappers.AdocaoMapper;
-import com.gijosc.adoteumpet.core.repositories.AdocaoRepositories;
+import com.gijosc.adoteumpet.core.repositories.AdocaoRepository;
 
 @RestController
 public class AdocaoController {
 
   @Autowired
-  private AdocaoRepositories adocaoRepositories;
+  private AdocaoRepository adocaoRepositories;
 
   @Autowired
   private AdocaoMapper adocaoMapper;

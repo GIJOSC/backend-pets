@@ -5,16 +5,15 @@ import org.springframework.stereotype.Component;
 
 import com.gijosc.adoteumpet.api.adocao.dtos.AdocaoRequest;
 import com.gijosc.adoteumpet.api.adocao.dtos.AdocaoResponse;
-import com.gijosc.adoteumpet.api.pet.controllers.petRepository;
 import com.gijosc.adoteumpet.api.pet.mappers.PetMapper;
 import com.gijosc.adoteumpet.core.models.Adocao;
-import com.gijosc.adoteumpet.core.repositories.PetRepositories;
+import com.gijosc.adoteumpet.core.repositories.PetRepository;
 
 @Component
 public class AdocaoMapper {
 
  @Autowired
-  private PetRepositories petRepositories;
+  private PetRepository petRepository;
 
   @Autowired
   private PetMapper petMapper;
@@ -23,7 +22,7 @@ public class AdocaoMapper {
       var adocao = new Adocao();
       adocao.setEmail(adocaoRequest.getEmail());
       adocao.setValor(adocaoRequest.getValor());
-      adocao.setPet(petRepositories.findByIdOrElseThrow(adocaoRequest.getPetId()));
+      adocao.setPet(petRepository.findByIdOrElseThrow(adocaoRequest.getPetId()));
       return adocao;
   }
 
